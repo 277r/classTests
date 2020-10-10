@@ -17,10 +17,12 @@ public:
 	int closestEnemyDistance;
 	void GetClosestEnemy(int amountOfEnemies, Enemy enemies[])
 	{
-		closestEnemyDistance = 10000;
+		closestEnemyDistance = 10000; // must fix to have set field size
 		for (int i = 0; i < amountOfEnemies; i++)
 		{
 			// get closest enemy by coordinates, mathematically incorrect
+			// must fix, something doesn't feel right
+			// subtract x from x, then y from y, then combine and turnpositive ??
 			if (turnPositive((enemies[i].x + enemies[i].y) - (x + y)) < closestEnemyDistance)
 			{
 				closestEnemyDistance = turnPositive((enemies[i].x + enemies[i].y) - (x + y));
@@ -36,7 +38,7 @@ int main()
 	Player player1;
 	player1.x = 37;
 	player1.y = 1;
-	Enemy enemies[100];
+	Enemy enemies[100]; // the 100 here stands for something to later use as in a formula, make 100 enemies, make 1000 enemies, MAKE 100000 ENEMIESZ!!!!!!!!!
 	for (int i = 0; i < 100; i++)
 	{
 		enemies[i].health = rand() % 10;
