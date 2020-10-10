@@ -1,7 +1,7 @@
 #include <iostream>
 #include <random>
 #include <ctime>
-#include "matlib.h"
+#include "tMathMain.cpp" // requires my matlib library
 class Enemy
 {
 public:
