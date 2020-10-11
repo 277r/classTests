@@ -20,10 +20,8 @@ public:
 		closestEnemyDistance = 10000; // must fix to have set field size
 		for (int i = 0; i < amountOfEnemies; i++)
 		{
-			// get closest enemy by coordinates, mathematically incorrect
-			// must fix, something doesn't feel right
-			// subtract x from x, then y from y, then combine and turnpositive ??
-			if (turnPositive((enemies[i].x + enemies[i].y) - (x + y)) < closestEnemyDistance)
+			// get closest enemy by coordinates, mathematically might be correct
+			if (turnPositive(enemies[i].x - x) + turnPositive(enemies[i].y - y) < closestEnemyDistance)
 			{
 				closestEnemyDistance = turnPositive((enemies[i].x + enemies[i].y) - (x + y));
 				closestEnemy = i;
@@ -35,15 +33,17 @@ public:
 
 int main()
 {
+	srand(time(NULL));
+
 	Player player1;
-	player1.x = 37;
-	player1.y = 1;
+	player1.x = rand() % 100 -50;
+	player1.y = rand() % 100 -50;
 	Enemy enemies[100]; // the 100 here stands for something to later use as in a formula, make 100 enemies, make 1000 enemies, MAKE 100000 ENEMIESZ!!!!!!!!!
 	for (int i = 0; i < 100; i++)
 	{
 		enemies[i].health = rand() % 10;
-		enemies[i].x = i;
-		enemies[i].y = 5;
+		enemies[i].x = rand() % 100 - 50;
+		enemies[i].y = rand() % 100 - 50;
 	}
 	for (int i = 0; i < 100; i++)
 	{
