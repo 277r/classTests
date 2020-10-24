@@ -48,7 +48,7 @@ public:
 		}
 		return true;
 	}
-	bool killenemy( Enemy enemie)
+	bool killenemy( Enemy &enemie)
 	{
 		if (enemie.isAlive == true)
 		{

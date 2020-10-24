@@ -51,7 +51,7 @@ public:
 		}
 		return true;
 	}
-	void killenemy(Enemy enemy)
+	void killenemy(Enemy &enemy)
 	{
 		if (enemy.isAlive == true && enemy.isHittable(*this))
 		{

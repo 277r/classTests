@@ -36,7 +36,7 @@ public:
 	int closestEnemyDistance;
 	int closestEnemyID;
 	int enemyKillCount;
-	void killEnemy(Enemy enemy)
+	void killEnemy(Enemy &enemy)
 	{
 		if (enemy.isAlive)
 		{
